@@ -1,15 +1,6 @@
 use std::collections::HashMap;
 use serde_json::Value;
-use crate::swagger::callback::Callback;
-use crate::swagger::example::Example;
-use crate::swagger::header::Header;
-use crate::swagger::link::Link;
-use crate::swagger::parameter::Parameter;
-use crate::swagger::request_body::RequestBody;
-use crate::swagger::response::Response;
-use crate::swagger::schema::Schema;
-use crate::swagger::schemas::Schemas;
-use crate::swagger::security_schema::SecuritySchema;
+use crate::swagger::components::schemas::Schemas;
 use crate::swagger::SwaggerModel;
 
 pub struct Components {

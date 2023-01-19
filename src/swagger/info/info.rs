@@ -1,7 +1,7 @@
 use serde_json::Value;
 use crate::swagger::{get_string_for_key, SwaggerModel};
-use crate::swagger::contact::Contact;
-use crate::swagger::licence::Licence;
+use crate::swagger::info::contact::Contact;
+use crate::swagger::info::licence::Licence;
 
 pub struct Info {
     pub title: String,
@@ -37,5 +37,3 @@ impl SwaggerModel<Info> for Info {
         "info".to_owned()
     }
 }
-
-

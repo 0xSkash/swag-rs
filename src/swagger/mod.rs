@@ -1,24 +1,11 @@
 use serde_json::Value;
 
 pub mod openapi;
-mod contact;
 mod info;
-mod licence;
 mod external_docs;
 mod components;
-mod schema;
-mod response;
-mod parameter;
-mod example;
-mod request_body;
-mod header;
 mod security_schema;
-mod link;
-mod callback;
 mod paths;
-mod path;
-mod properties;
-mod schemas;
 
 trait SwaggerModel<T> {
     fn from_json(json: &Value) -> Option<T>;

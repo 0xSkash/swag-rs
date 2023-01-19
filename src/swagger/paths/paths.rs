@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use serde_json::Value;
-use crate::swagger::path::Path;
+use crate::swagger::paths::path::Path;
 use crate::swagger::SwaggerModel;
 
 pub struct Paths {

@@ -1,6 +1,6 @@
 use serde_json::Value;
 use crate::swagger::{get_string_for_key, SwaggerModel};
-use crate::swagger::properties::Properties;
+use crate::swagger::components::properties::Properties;
 
 pub struct Schema {
     pub schema_type: String,

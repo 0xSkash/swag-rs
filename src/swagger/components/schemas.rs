@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use serde_json::Value;
-use crate::swagger::schema::Schema;
+use crate::swagger::components::schema::Schema;
 use crate::swagger::SwaggerModel;
 
 pub struct Schemas {
