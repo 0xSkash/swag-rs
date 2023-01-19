@@ -5,6 +5,7 @@ pub enum Error {
     DocsFileNotFound,
     JsonParse,
     InfoParse,
+    InvalidPath
 }
 
 impl Display for Error {
