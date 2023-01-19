@@ -5,6 +5,8 @@ pub enum Error {
     DocsFileNotFound,
     JsonParse,
     InfoParse,
+    ComponentsParse,
+    PathsParse,
     InvalidPath
 }
 

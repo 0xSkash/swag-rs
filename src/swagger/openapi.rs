@@ -1,11 +1,17 @@
 use std::fs::File;
 use serde_json::Value;
+use crate::swagger::components::Components;
+use crate::swagger::external_docs::ExternalDocs;
 use crate::swagger::info::Info;
+use crate::swagger::paths::Paths;
 use crate::swagger::SwaggerModel;
 use crate::util::error::Error;
 
 pub struct OpenAPI {
     pub info: Info,
+//    pub paths: Paths,
+    pub components: Components,
+    pub external_docs: Option<ExternalDocs>,
 }
 
 impl OpenAPI {
@@ -21,7 +27,9 @@ impl OpenAPI {
         })?;
 
         Ok(OpenAPI {
-            info: Info::from_json(&json).ok_or(Error::InfoParse)?
+            info: Info::from_json(&json).ok_or(Error::InfoParse)?,
+            components: Components::from_json(&json).ok_or(Error::PathsParse)?,
+            external_docs: ExternalDocs::from_json(&json),
         })
     }
 }

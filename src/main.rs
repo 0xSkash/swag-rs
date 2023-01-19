@@ -32,9 +32,13 @@ fn handle_generate_command(command: &GeneratorSubcommand) -> Result<(), Error> {
     let args = get_args_from_cli_input(command);
     validate_args(args)?;
 
-    let open_api = OpenAPI::from_path(&args.input_path)?;
+    let openapi = OpenAPI::from_path(&args.input_path)?;
 
-    info!("Found OpenAPI with title: {}, version: {}", &open_api.info.title, &open_api.info.version);
+    info!("Found OpenAPI with title: {}, version: {}", &openapi.info.title, &openapi.info.version);
+
+    let _ = &openapi.components.schemas.values.iter().for_each(|(key, schema)| {
+        info!("Found Schema {:?} with type {:?}", key, schema.schema_type)
+    });
 
     // TODO: Implement API-Client generation
     Ok(())
